@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Bazelisk
+        uses: mishas/setup-bazelisk-action@v1
+
+      - name: Build without flags
+        run: bazel build //pkg/demo
+
+      - name: Build with myflag=a
+        run: bazel build //pkg/demo --//pkg/demo:myflag=a
+
+      - name: Build with myflag=b
+        run: bazel build //pkg/demo --//pkg/demo:myflag=b
