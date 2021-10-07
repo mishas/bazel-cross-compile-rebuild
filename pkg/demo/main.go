@@ -3,10 +3,9 @@ package main
 import (
 	"fmt"
 
-	"example.com/pkg/pb"
+	_ "golang.org/x/tools/go/analysis"
 )
 
 func main() {
-	msg := &pb.MyMessage{Id: 49}
-	fmt.Println("MyMessage: ", msg)
+	fmt.Println("Hello world")
 }
