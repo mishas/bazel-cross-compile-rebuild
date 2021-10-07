@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	"example.com/pkg/pb"
+	_ "firebase.google.com/go/v4"
+	_ "gocloud.dev/blob"
 )
 
 func main() {
-	msg := &pb.MyMessage{Id: 49}
-	fmt.Println("MyMessage: ", msg)
+	fmt.Println("Hello world")
 }
