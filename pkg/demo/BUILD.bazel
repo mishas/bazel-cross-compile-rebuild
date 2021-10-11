@@ -6,8 +6,9 @@ go_library(
     importpath = "example.com/pkg/demo",
     visibility = ["//visibility:private"],
     deps = [
-        "@com_google_firebase_go_v4//:go_default_library",
-        "@dev_gocloud//blob:go_default_library",
+        "//pkg/pb",
+        "@com_google_firebase_go_v4//:go",
+        "@dev_gocloud//blob",
     ],
 )
 

@@ -5,8 +5,11 @@ import (
 
 	_ "firebase.google.com/go/v4"
 	_ "gocloud.dev/blob"
+
+	"example.com/pkg/pb"
 )
 
 func main() {
-	fmt.Println("Hello world")
+	msg := pb.MyMessage{}
+	fmt.Println("Hello world", msg)
 }
